@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+{% block title %}Invoices listing{% endblock %}
+{% block body %}
+    <h1>Invoices listing</h1>
+    <ul>
+    {% for invoice in invoices %}
+        <li><a href="{{ path('invoice_details', {'id': invoice.id }) }}">{{ invoice.reference }}</li>
+    {% else %}
+        <li><em>no invoices found yet</em></li>
+    {% endfor %}
+    </ul>
+    <p>
+        <a href="{{ path('home') }}">Back to homepage</a>
+    </p>
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Invoices{% endblock %}
+
+{% block body %}
+    <h1>Welcome to our invoice system</h1>
+    <ul>
+        <li><a href="{{ path('invoice_listing') }}">Access the list of invoices</a></li>
+    </ul>
+{% endblock %}

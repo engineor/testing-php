@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
+                          http://raw.github.com/doctrine/doctrine2/master/doctrine-mapping.xsd">
+
+    <entity name="App\Entity\InvoiceRow" table="invoices_rows">
+        <id name="id" type="uuid" length="36" column="id">
+            <generator strategy="NONE"/>
+        </id>
+        <many-to-one field="invoice" target-entity="App\Entity\Invoice" inversed-by="rows" />
+        <field name="label" length="255" />
+        <field name="priceTaxExcluded" type="float" />
+        <field name="tax" type="float" />
+    </entity>
+</doctrine-mapping>
